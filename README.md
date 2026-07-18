@@ -2,6 +2,12 @@
 
 Search movies and TV shows from Discord, preview IMDb / Rotten Tomatoes critic scores via OMDb, and send requests to your [Seerr](https://seerr.dev/) (or Overseerr-compatible) instance. This is a very basic and simple discord bot with no arr's integration. The point of this bot was to just view movies/shows in discord and be able to send a request to seerr quickly. If your arrs/program is setup to handle seerr requests properly it works great. For example I use Seerr -> Cli_Debird -> Plex
 
+![Search result with request button](docs/example-request.png)
+
+![Already available — no request button](docs/example-available.png)
+
+![Public request confirmation](docs/example-submitted.png)
+
 ## Features
 
 - `!search <name>` and `/search` hybrid commands
