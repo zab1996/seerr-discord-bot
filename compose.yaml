@@ -1,0 +1,30 @@
+services:
+  seerr-bot:
+    image: python:3.12-slim
+    container_name: seerr-bot
+    restart: unless-stopped
+    working_dir: /app
+    env_file:
+      - .env
+    environment:
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      # Bind-mount the project so code edits apply without rebuilding.
+      # Dockge: set HOST_BOT_PATH to the absolute path of this folder.
+      - ${HOST_BOT_PATH:-.}:/app
+      - seerr-bot-pip-cache:/root/.cache/pip
+    command:
+      - sh
+      - -c
+      - pip install -r requirements.txt && exec python -u bot.py
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  seerr-bot-pip-cache:
