@@ -80,7 +80,7 @@ Set `DISCORD_GUILD_ID` to your server ID for **instant** slash commands (global 
 | `SEERR_EMOJI_ID` | no | Custom emoji snowflake ID |
 | `HOST_BOT_PATH` | no | Absolute project path for Docker bind-mount |
 
-**Never commit `.env`** — it contains secrets. Only `.env.example` is in the repo.
+
 
 ## Usage
 
